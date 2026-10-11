@@ -1,0 +1,115 @@
+{
+  "리오마레": {
+    "brand_name": "리오마레",
+    "columns": [
+      "날짜",
+      "판매처",
+      "주문번호",
+      "수령자",
+      "수령자주소",
+      "수령자전화번호",
+      "수령자핸드폰",
+      "상품명",
+      "수량",
+      "송장번호",
+      "배송메세지"
+    ],
+    "gift_rule": "add_row",
+    "shipping_config": {
+      "bundle_targets": [
+        "수취인명",
+        "주소지",
+        "연락처"
+      ],
+      "free_shipping_threshold": 0,
+      "base_shipping_fee": 3000,
+      "jeju_extra_fee": 3000
+    },
+    "template_name": "리오마레"
+  },
+  "호무로": {
+    "template_name": "호무로",
+    "brand_name": "호무로",
+    "columns": [
+      "순번",
+      "셀러명",
+      "주문일시",
+      "주문번호",
+      "수령인",
+      "연락처",
+      "우편번호",
+      "주소",
+      "브랜드상품명",
+      "옵션명",
+      "수량",
+      "제주도서여부",
+      "이벤트색인",
+      "배송메모"
+    ],
+    "gift_rule": "add_row",
+    "shipping_config": {
+      "bundle_targets": [],
+      "free_shipping_threshold": 50000,
+      "base_shipping_fee": 3000,
+      "jeju_extra_fee": 3000
+    }
+  },
+  "템포": {
+    "template_name": "템포",
+    "brand_name": "템포",
+    "columns": [
+      "수취인",
+      "수취인전화번호",
+      "수취인핸드폰",
+      "우편번호",
+      "수취인주소",
+      "송장번호",
+      "주문번호",
+      "상품명",
+      "상품수량",
+      "0",
+      "0.1",
+      "0.2",
+      "배송메세지",
+      "배송메세지2",
+      "품목별 주문번호"
+    ],
+    "gift_rule": "add_row",
+    "shipping_config": {
+      "bundle_targets": [],
+      "free_shipping_threshold": 30000,
+      "base_shipping_fee": 3000,
+      "jeju_extra_fee": 4000
+    }
+  },
+  "칼로하스": {
+    "template_name": "칼로하스",
+    "brand_name": "칼로하스",
+    "columns": [
+      "주문번호",
+      "구매자명",
+      "수취인명",
+      "상품명",
+      "옵션정보",
+      "수량",
+      "수취인연락처1",
+      "수취인연락처2",
+      "우편번호",
+      "통합배송지",
+      "배송메세지",
+      "제주/도서 추가배송비",
+      "배송비 합계"
+    ],
+    "gift_rule": "add_row",
+    "shipping_config": {
+      "bundle_targets": [
+        "수취인명",
+        "주소지",
+        "연락처"
+      ],
+      "free_shipping_threshold": 0,
+      "base_shipping_fee": 3000,
+      "jeju_extra_fee": 3000
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Portable Distribution Packages (100MB+ large files excluded from Git)
+python_runtime/
+OrderBridge_Portable/
+*.zip
+
+# Virtual Environments
+env/
+venv/
+ENV/
+.venv/
+
+# Streamlit temporary files
+.streamlit/secrets.toml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# App Temporary Data
+order_history/
+.venv_mac/
+.streamlit/credentials.toml

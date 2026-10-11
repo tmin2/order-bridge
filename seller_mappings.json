@@ -1,0 +1,1228 @@
+{
+  "대연(유누맘)": {
+    "template_name": "대연(유누맘)",
+    "seller_name": "대연(유누맘)",
+    "brand_name": "리오마레",
+    "column_mapping": {
+      "order_time": "주문일",
+      "order_id": "주문번호",
+      "buyer_name": "주문자명",
+      "buyer_phone": "주문자연락처",
+      "receiver_name": "수령인명",
+      "receiver_phone": "수령인연락처",
+      "zipcode": "우편번호",
+      "address": "주소",
+      "address_detail": "(선택안함)",
+      "product_name": "고객선택옵션",
+      "option_name": "(선택안함)",
+      "quantity": "주문수량",
+      "price": "상품금액(옵션포함)",
+      "shipping_memo": "배송시 요청사항"
+    },
+    "product_mappings": {
+      "엑스트라버진 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600
+      },
+      "마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400
+      },
+      "인쌀라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400
+      },
+      "인쌀라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      }
+    },
+    "updated_at": "2026-10-09 23:05",
+    "event_config": {
+      "color_event": "#FFF2CC",
+      "color_gift": "#E2EFDA",
+      "first_come_first_served": {
+        "enabled": false,
+        "limit": 3,
+        "gift_product_name": "[증정] 선착순 미니어처 15ml",
+        "gift_option_name": "증정용",
+        "gift_quantity": 1,
+        "target_rule": [
+          "수취인명",
+          "연락처"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "min_amount": {
+        "enabled": false,
+        "min_amount": 50000,
+        "fcfs_enabled": false,
+        "fcfs_limit": 50,
+        "gift_product_name": "[증정] 금액달성 사은품",
+        "gift_option_name": "1세트",
+        "gift_quantity": 1,
+        "target_rule": [
+          "주문번호"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "special_product": {
+        "enabled": false,
+        "keyword": "",
+        "gift_product_name": "[사은품] 특정품목 증정",
+        "gift_option_name": "단품",
+        "gift_quantity": 1,
+        "target_rule": [
+          "주문번호"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#E2EFDA",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "custom_events": [
+        {
+          "title": "장바구니",
+          "enabled": true,
+          "condition_type": "구매금액 달성 증정",
+          "limit": 10,
+          "min_amount": 40000,
+          "keyword": "",
+          "gift_product_name": "장바구니",
+          "gift_option_name": "단품",
+          "gift_quantity": 1,
+          "target_rule": [
+            "수취인명",
+            "연락처",
+            "주소"
+          ],
+          "action_type": "add_row",
+          "gift_position": "발주서 최하단(맨 끝)에 사은품만 모아서 일괄 추가",
+          "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+          "write_col_enabled": true,
+          "write_target_col": "N",
+          "color": "#44ff4a",
+          "no_color": false,
+          "highlight_scope": "gift_only"
+        }
+      ]
+    }
+  },
+  "노네임(우동맘)": {
+    "template_name": "노네임(우동맘)",
+    "seller_name": "노네임(우동맘)",
+    "brand_name": "리오마레",
+    "column_mapping": {
+      "order_time": "(선택안함)",
+      "order_id": "주문번호",
+      "buyer_name": "(선택안함)",
+      "buyer_phone": "(선택안함)",
+      "receiver_name": "수령자",
+      "receiver_phone": "수령자전화번호",
+      "zipcode": "(선택안함)",
+      "address": "수령자주소",
+      "address_detail": "(선택안함)",
+      "product_name": "상품명",
+      "option_name": "(선택안함)",
+      "quantity": "수량",
+      "price": "(선택안함)",
+      "shipping_memo": "배송메세지",
+      "seller_channel": "판매처"
+    },
+    "product_mappings": {
+      "구성품: 올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400
+      },
+      "구성품: 엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600
+      },
+      "구성품: 인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "구성품: 인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "구성품: 올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400
+      },
+      "인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600
+      },
+      "인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400
+      },
+      "올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400
+      },
+      "구성품: 인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "리오마레 장바구니||": {
+        "brand_product": "리오마레 장바구니",
+        "brand_option": "",
+        "unit_price": 0
+      }
+    },
+    "custom_seller_name": "",
+    "custom_order_date": "",
+    "force_custom_date": true,
+    "updated_at": "2026-10-10 02:34",
+    "event_config": {
+      "color_event": "#FFF2CC",
+      "color_gift": "#E2EFDA",
+      "first_come_first_served": {
+        "enabled": false,
+        "limit": 3,
+        "gift_product_name": "[증정] 선착순 미니어처 15ml",
+        "gift_option_name": "증정용",
+        "gift_quantity": 1,
+        "target_rule": [
+          "수취인명",
+          "연락처"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "min_amount": {
+        "enabled": false,
+        "min_amount": 50000,
+        "fcfs_enabled": false,
+        "fcfs_limit": 50,
+        "gift_product_name": "[증정] 금액달성 사은품",
+        "gift_option_name": "1세트",
+        "gift_quantity": 1,
+        "target_rule": [
+          "주문번호"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "special_product": {
+        "enabled": false,
+        "keyword": "",
+        "gift_product_name": "[사은품] 특정품목 증정",
+        "gift_option_name": "단품",
+        "gift_quantity": 1,
+        "target_rule": [
+          "주문번호"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#E2EFDA",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "custom_events": []
+    }
+  },
+  "에이핏_리오마레": {
+    "template_name": "에이핏_리오마레",
+    "seller_name": "에이핏_리오마레",
+    "brand_name": "리오마레",
+    "column_mapping": {
+      "order_time": "주문일시",
+      "order_id": "주문번호",
+      "buyer_name": "구매자명",
+      "buyer_phone": "구매자연락처",
+      "receiver_name": "수취인명",
+      "receiver_phone": "구매자연락처",
+      "zipcode": "우편번호",
+      "address": "통합배송지",
+      "address_detail": "(선택안함)",
+      "product_name": "옵션정보",
+      "option_name": "옵션정보",
+      "quantity": "수량",
+      "price": "최종 상품별 총 주문금액",
+      "shipping_memo": "배송메세지",
+      "seller_channel": "(선택안함)"
+    },
+    "product_mappings": {
+      "구성품: 올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400
+      },
+      "구성품: 엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600
+      },
+      "구성품: 인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "구성품: 인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "구성품: 올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400
+      },
+      "인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true
+      },
+      "인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "is_matched": true
+      },
+      "올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400,
+        "is_matched": true
+      },
+      "구성품: 인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "리오마레 장바구니||": {
+        "brand_product": "리오마레 장바구니",
+        "brand_option": "",
+        "unit_price": 0,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 인살라티씨메 마일드스파이시라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 엑스트라버진 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 선물세트||": {
+        "brand_product": "올리브오일 선물세트",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 혼합 선물세트||": {
+        "brand_product": "혼합 선물세트",
+        "brand_option": "",
+        "unit_price": 48900,
+        "is_matched": true
+      }
+    },
+    "custom_seller_name": "",
+    "custom_order_date": "",
+    "force_custom_date": true,
+    "updated_at": "2026-10-10 03:17"
+  },
+  "레이첼민선": {
+    "template_name": "레이첼민선",
+    "seller_name": "레이첼민선",
+    "brand_name": "템포",
+    "column_mapping": {
+      "order_time": "(선택안함)",
+      "order_id": "주문번호",
+      "buyer_name": "(선택안함)",
+      "buyer_phone": "(선택안함)",
+      "receiver_name": "수취인",
+      "receiver_phone": "수취인전화번호",
+      "zipcode": "우편번호",
+      "address": "수취인주소",
+      "address_detail": "(선택안함)",
+      "product_name": "상품명",
+      "option_name": "(선택안함)",
+      "quantity": "상품수량",
+      "price": "(선택안함)",
+      "shipping_memo": "배송메세지",
+      "seller_channel": "(선택안함)"
+    },
+    "product_mappings": {
+      "필수옵션=5. 롤티슈 4팩 + 갑티슈 1갑||": {
+        "brand_product": "5. 롤티슈 4팩 + 갑티슈 1갑",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 71200,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 5
+      },
+      "필수옵션=8. 행키티슈 5팩 + 미니행키티슈 5팩||": {
+        "brand_product": "8. 행키티슈 5팩 + 미니행키티슈 5팩",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 37900,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 8
+      },
+      "필수옵션=4. 롤티슈 3팩 + 갑티슈 6갑 + 행키티슈 2개||": {
+        "brand_product": "4. 롤티슈 3팩 + 갑티슈 6갑 + 행키티슈 2개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 77000,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 4
+      },
+      "필수옵션=6. 갑티슈 12갑||": {
+        "brand_product": "6. 갑티슈 12갑",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 43200,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 6
+      },
+      "필수옵션=2. 롤티슈 2팩 + 행키티슈 2개||": {
+        "brand_product": "2. 롤티슈 2팩 + 행키티슈 2개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 35900,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 2
+      },
+      "필수옵션=7. 롤티슈 6팩||": {
+        "brand_product": "7. 롤티슈 6팩",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 95400,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 7
+      },
+      "필수옵션=3. 롤티슈 2팩 + 갑티슈 3갑 + 행키티슈 1개||": {
+        "brand_product": "3. 롤티슈 2팩 + 갑티슈 3갑 + 행키티슈 1개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 47400,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 3
+      },
+      "필수옵션=1. 롤티슈 1팩 + 갑티슈 2갑||": {
+        "brand_product": "1. 롤티슈 1팩 + 갑티슈 2갑",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 29000,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 1
+      }
+    },
+    "product_order": [
+      "필수옵션=1. 롤티슈 1팩 + 갑티슈 2갑||",
+      "필수옵션=2. 롤티슈 2팩 + 행키티슈 2개||",
+      "필수옵션=3. 롤티슈 2팩 + 갑티슈 3갑 + 행키티슈 1개||",
+      "필수옵션=4. 롤티슈 3팩 + 갑티슈 6갑 + 행키티슈 2개||",
+      "필수옵션=5. 롤티슈 4팩 + 갑티슈 1갑||",
+      "필수옵션=6. 갑티슈 12갑||",
+      "필수옵션=7. 롤티슈 6팩||",
+      "필수옵션=8. 행키티슈 5팩 + 미니행키티슈 5팩||"
+    ],
+    "custom_seller_name": "템포",
+    "custom_order_date": "2026-10-07",
+    "force_custom_date": true,
+    "updated_at": "2026-10-10 05:29"
+  },
+  "핑크파르페": {
+    "template_name": "핑크파르페",
+    "seller_name": "핑크파르페",
+    "brand_name": "리오마레",
+    "column_mapping": {
+      "order_time": "(선택안함)",
+      "order_id": "주문번호",
+      "buyer_name": "(선택안함)",
+      "buyer_phone": "(선택안함)",
+      "receiver_name": "수령인",
+      "receiver_phone": "수령인 휴대전화",
+      "zipcode": "수령인 우편번호",
+      "address": "수령인 주소(전체)",
+      "address_detail": "(선택안함)",
+      "product_name": "상품옵션(기본)",
+      "option_name": "상품옵션(기본)",
+      "quantity": "수량",
+      "price": "(선택안함)",
+      "shipping_memo": "(선택안함)",
+      "seller_channel": "상품명(한국어 쇼핑몰)"
+    },
+    "product_mappings": {
+      "구성품: 올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400
+      },
+      "구성품: 엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600
+      },
+      "구성품: 인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "구성품: 인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "구성품: 올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400
+      },
+      "인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true
+      },
+      "인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "is_matched": true
+      },
+      "올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400,
+        "is_matched": true
+      },
+      "구성품: 인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300
+      },
+      "리오마레 장바구니||": {
+        "brand_product": "리오마레 장바구니",
+        "brand_option": "",
+        "unit_price": 0,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 인살라티씨메 마일드스파이시라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 엑스트라버진 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 선물세트||": {
+        "brand_product": "올리브오일 선물세트",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true
+      },
+      "에이핏 X 리오마레: 혼합 선물세트||": {
+        "brand_product": "혼합 선물세트",
+        "brand_option": "",
+        "unit_price": 48900,
+        "is_matched": true
+      },
+      "구성=인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 5
+      },
+      "구성=인살라티씨메 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 3
+      },
+      "구성=인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 4
+      },
+      "구성=올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "is_matched": true,
+        "sort_order": 2
+      },
+      "구성=엑스트라버진 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true,
+        "sort_order": 1
+      }
+    },
+    "product_order": [
+      "구성=엑스트라버진 올리브오일 참치 195g 3개||",
+      "구성=올리브오일 참치 160g 5개||",
+      "구성=인살라티씨메 마일드 스파이시 라이스 160g 6개||",
+      "구성=인살라티씨메 멕시칸 160g 6개||",
+      "구성=인살라티씨메 옥수수 160g 6개||"
+    ],
+    "custom_seller_name": "리오마레 261008",
+    "custom_order_date": "2026-10-10",
+    "force_custom_date": true,
+    "updated_at": "2026-10-10 05:56",
+    "event_config": {
+      "color_event": "#FFF2CC",
+      "color_gift": "#E2EFDA",
+      "first_come_first_served": {
+        "enabled": false,
+        "limit": 3,
+        "gift_product_name": "[증정] 선착순 미니어처 15ml",
+        "gift_option_name": "증정용",
+        "gift_quantity": 1,
+        "target_rule": [
+          "수취인명",
+          "연락처"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "min_amount": {
+        "enabled": true,
+        "min_amount": 70000,
+        "fcfs_enabled": false,
+        "fcfs_limit": 30,
+        "gift_product_name": "장바구니",
+        "gift_option_name": "",
+        "gift_quantity": 1,
+        "target_rule": [
+          "수취인명",
+          "연락처",
+          "주소"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "발주서 최하단(맨 끝)에 사은품만 모아서 일괄 추가",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "gift_only"
+      },
+      "special_product": {
+        "enabled": false,
+        "keyword": "",
+        "gift_product_name": "[사은품] 특정품목 증정",
+        "gift_option_name": "단품",
+        "gift_quantity": 1,
+        "target_rule": [
+          "주문번호"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#E2EFDA",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "custom_events": []
+    }
+  },
+  "쥬쥬월드": {
+    "template_name": "쥬쥬월드",
+    "seller_name": "쥬쥬월드",
+    "brand_name": "리오마레",
+    "column_mapping": {
+      "order_time": "(선택안함)",
+      "order_id": "주문번호",
+      "buyer_name": "주문자명",
+      "buyer_phone": "주문자 전화번호",
+      "receiver_name": "수령인",
+      "receiver_phone": "수령인 휴대전화",
+      "zipcode": "수령인 우편번호",
+      "address": "수령인 주소(전체)",
+      "address_detail": "(선택안함)",
+      "product_name": "주문상품명(옵션포함)",
+      "option_name": "(선택안함)",
+      "quantity": "수량",
+      "price": "(선택안함)",
+      "shipping_memo": "(선택안함)",
+      "seller_channel": "(선택안함)"
+    },
+    "product_mappings": {
+      "구성품: 올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400,
+        "sort_order": 17
+      },
+      "구성품: 엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "sort_order": 18
+      },
+      "구성품: 인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "sort_order": 19
+      },
+      "구성품: 인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "sort_order": 20
+      },
+      "구성품: 올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "sort_order": 21
+      },
+      "인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 22
+      },
+      "엑스트라 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true,
+        "sort_order": 23
+      },
+      "인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 24
+      },
+      "인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 25
+      },
+      "올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "is_matched": true,
+        "sort_order": 26
+      },
+      "올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400,
+        "is_matched": true,
+        "sort_order": 27
+      },
+      "구성품: 인살라 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "sort_order": 28
+      },
+      "에이핏 X 리오마레: 인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 29
+      },
+      "에이핏 X 리오마레: 인살라티씨메 마일드스파이시라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 30
+      },
+      "에이핏 X 리오마레: 인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "unit_price": 34300,
+        "is_matched": true,
+        "sort_order": 31
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "unit_price": 31400,
+        "is_matched": true,
+        "sort_order": 32
+      },
+      "에이핏 X 리오마레: 엑스트라버진 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true,
+        "sort_order": 33
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "unit_price": 33400,
+        "is_matched": true,
+        "sort_order": 34
+      },
+      "에이핏 X 리오마레: 올리브오일 참치 선물세트||": {
+        "brand_product": "올리브오일 선물세트",
+        "brand_option": "",
+        "unit_price": 32600,
+        "is_matched": true,
+        "sort_order": 35
+      },
+      "에이핏 X 리오마레: 혼합 선물세트||": {
+        "brand_product": "혼합 선물세트",
+        "brand_option": "",
+        "unit_price": 48900,
+        "is_matched": true,
+        "sort_order": 36
+      },
+      "구성=인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 34300,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 10
+      },
+      "구성=인살라티씨메 마일드 스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 34300,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 6
+      },
+      "구성=인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 34300,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 8
+      },
+      "구성=올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 33400,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 4
+      },
+      "구성=엑스트라버진 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 32600,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 2
+      },
+      "__official__올리브오일 참치 240g 3개||": {
+        "brand_product": "올리브오일 참치 240g 3개",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 31400,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 1
+      },
+      "__official__리오마레 장바구니||": {
+        "brand_product": "리오마레 장바구니",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 0,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 3
+      },
+      "__official__올리브오일 선물세트||": {
+        "brand_product": "올리브오일 선물세트",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 62900,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 14
+      },
+      "__official__혼합 선물세트||": {
+        "brand_product": "혼합 선물세트",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 48900,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 16
+      },
+      "혼합 선물세트 구성: 옥수수 160g*2 + 멕시칸160g*2 + 올리브오일 참치 160g*4)||": {
+        "brand_product": "혼합 선물세트",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 48900,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 5
+      },
+      "올리브오일 참치 선물세트 구성: 올리브오일참치(80g*3개)*6개)||": {
+        "brand_product": "올리브오일 선물세트",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 62900,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "sort_order": 7
+      },
+      "__official__엑스트라 버진 올리브오일 참치 195g 3개||": {
+        "brand_product": "엑스트라 버진 올리브오일 참치 195g 3개",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 32600,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 9
+      },
+      "__official__인살라티씨메 마일드스파이시 라이스 160g 6개||": {
+        "brand_product": "인살라티씨메 마일드스파이시 라이스 160g 6개",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 34300,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 11
+      },
+      "__official__올리브오일 참치 160g 5개||": {
+        "brand_product": "올리브오일 참치 160g 5개",
+        "brand_option": "",
+        "code": "(없음)",
+        "unit_price": 33400,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 12
+      },
+      "__official__인살라티씨메 옥수수 160g 6개||": {
+        "brand_product": "인살라티씨메 옥수수 160g 6개",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 34300,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 13
+      },
+      "__official__인살라티씨메 멕시칸 160g 6개||": {
+        "brand_product": "인살라티씨메 멕시칸 160g 6개",
+        "brand_option": "",
+        "code": "",
+        "unit_price": 34300,
+        "is_matched": false,
+        "is_pre_registered": true,
+        "sort_order": 15
+      }
+    },
+    "product_order": [
+      "__official__올리브오일 참치 240g 3개||",
+      "구성=엑스트라버진 올리브오일 참치 195g 3개||",
+      "__official__리오마레 장바구니||",
+      "구성=올리브오일 참치 160g 5개||",
+      "혼합 선물세트 구성: 옥수수 160g*2 + 멕시칸160g*2 + 올리브오일 참치 160g*4)||",
+      "구성=인살라티씨메 마일드 스파이시 라이스 160g 6개||",
+      "올리브오일 참치 선물세트 구성: 올리브오일참치(80g*3개)*6개)||",
+      "구성=인살라티씨메 멕시칸 160g 6개||",
+      "__official__엑스트라 버진 올리브오일 참치 195g 3개||",
+      "구성=인살라티씨메 옥수수 160g 6개||",
+      "__official__인살라티씨메 마일드스파이시 라이스 160g 6개||",
+      "__official__올리브오일 참치 160g 5개||",
+      "__official__인살라티씨메 옥수수 160g 6개||",
+      "__official__올리브오일 선물세트||",
+      "__official__인살라티씨메 멕시칸 160g 6개||",
+      "__official__혼합 선물세트||",
+      "구성품: 올리브오일 참치 240g 3개||",
+      "구성품: 엑스트라 올리브오일 참치 195g 3개||",
+      "구성품: 인살라티씨메 옥수수 160g 6개||",
+      "구성품: 인살라티씨메 멕시칸 160g 6개||",
+      "구성품: 올리브오일 참치 160g 5개||",
+      "인살라티씨메 멕시칸 160g 6개||",
+      "엑스트라 올리브오일 참치 195g 3개||",
+      "인살라티씨메 옥수수 160g 6개||",
+      "인살라 마일드 스파이시 라이스 160g 6개||",
+      "올리브오일 참치 160g 5개||",
+      "올리브오일 참치 240g 3개||",
+      "구성품: 인살라 마일드 스파이시 라이스 160g 6개||",
+      "에이핏 X 리오마레: 인살라티씨메 옥수수 160g 6개||",
+      "에이핏 X 리오마레: 인살라티씨메 마일드스파이시라이스 160g 6개||",
+      "에이핏 X 리오마레: 인살라티씨메 멕시칸 160g 6개||",
+      "에이핏 X 리오마레: 올리브오일 참치 240g 3개||",
+      "에이핏 X 리오마레: 엑스트라버진 올리브오일 참치 195g 3개||",
+      "에이핏 X 리오마레: 올리브오일 참치 160g 5개||",
+      "에이핏 X 리오마레: 올리브오일 참치 선물세트||",
+      "에이핏 X 리오마레: 혼합 선물세트||"
+    ],
+    "custom_seller_name": "쥬쥬월드",
+    "custom_order_date": "2026-09-15",
+    "force_custom_date": true,
+    "updated_at": "2026-10-10 06:17"
+  },
+  "+ 새 셀러 템플릿 등록 (현재 파일 기준)": {
+    "template_name": "+ 새 셀러 템플릿 등록 (현재 파일 기준)",
+    "seller_name": "+ 새 셀러 템플릿 등록 (현재 파일 기준)",
+    "brand_name": "칼로하스",
+    "column_mapping": {
+      "order_time": "(선택안함)",
+      "order_id": "주문번호",
+      "buyer_name": "구매자명",
+      "buyer_phone": "(선택안함)",
+      "receiver_name": "수취인명",
+      "receiver_phone": "수취인연락처1",
+      "zipcode": "우편번호",
+      "address": "통합배송지",
+      "address_detail": "(선택안함)",
+      "product_name": "상품명",
+      "option_name": "옵션정보",
+      "quantity": "수량",
+      "price": "(선택안함)",
+      "shipping_memo": "배송메세지",
+      "seller_channel": "(선택안함)"
+    },
+    "product_mappings": {
+      "칼로하스 그린케일||칼로하스 그린케일 2박스": {
+        "brand_product": "칼로하스 그린케일",
+        "brand_option": "칼로하스 그린케일 2박스",
+        "code": "칼로하스 그린케일 2박스",
+        "unit_price": 0,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "keep_original": true,
+        "sort_order": 1
+      },
+      "칼로하스 그린케일||칼로하스 그린케일 5박스 (물병 1개 증정)": {
+        "brand_product": "칼로하스 그린케일",
+        "brand_option": "칼로하스 그린케일 5박스 (물병 1개 증정)",
+        "code": "칼로하스 그린케일 5박스 (물병 1개 증정)",
+        "unit_price": 0,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "keep_original": true,
+        "sort_order": 2
+      },
+      "칼로하스 그린케일||칼로하스 그린케일 20+2박스 (물병 2개 증정)": {
+        "brand_product": "칼로하스 그린케일",
+        "brand_option": "칼로하스 그린케일 20+2박스 (물병 2개 증정)",
+        "code": "칼로하스 그린케일 20+2박스 (물병 2개 증정)",
+        "unit_price": 0,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "keep_original": true,
+        "sort_order": 3
+      },
+      "칼로하스 그린케일||칼로하스 그린케일 10박스 (물병 2개 증정)": {
+        "brand_product": "칼로하스 그린케일",
+        "brand_option": "칼로하스 그린케일 10박스 (물병 2개 증정)",
+        "code": "칼로하스 그린케일 10박스 (물병 2개 증정)",
+        "unit_price": 0,
+        "is_matched": true,
+        "is_pre_registered": false,
+        "keep_original": true,
+        "sort_order": 4
+      }
+    },
+    "product_order": [
+      "칼로하스 그린케일||칼로하스 그린케일 2박스",
+      "칼로하스 그린케일||칼로하스 그린케일 5박스 (물병 1개 증정)",
+      "칼로하스 그린케일||칼로하스 그린케일 20+2박스 (물병 2개 증정)",
+      "칼로하스 그린케일||칼로하스 그린케일 10박스 (물병 2개 증정)"
+    ],
+    "custom_seller_name": "",
+    "custom_order_date": "",
+    "force_custom_date": true,
+    "updated_at": "2026-10-10 20:38"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "기본 (이벤트 없음)": {
+    "template_name": "기본 (이벤트 없음)",
+    "config": {
+      "color_event": "#FFF2CC",
+      "color_gift": "#E2EFDA",
+      "first_come_first_served": {
+        "enabled": false
+      },
+      "min_amount": {
+        "enabled": false
+      },
+      "special_product": {
+        "enabled": false
+      },
+      "custom_events": []
+    },
+    "updated_at": "2026-10-10 01:22",
+    "is_pinned": false
+  },
+  "리오마레 장바구니 이벤트": {
+    "template_name": "리오마레 장바구니 이벤트",
+    "config": {
+      "color_event": "#FFF2CC",
+      "color_gift": "#E2EFDA",
+      "first_come_first_served": {
+        "enabled": false,
+        "limit": 3,
+        "gift_product_name": "[증정] 선착순 미니어처 15ml",
+        "gift_option_name": "증정용",
+        "gift_quantity": 1,
+        "target_rule": [
+          "수취인명",
+          "연락처"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "min_amount": {
+        "enabled": true,
+        "min_amount": 70000,
+        "fcfs_enabled": false,
+        "fcfs_limit": 30,
+        "gift_product_name": "장바구니",
+        "gift_option_name": "",
+        "gift_quantity": 1,
+        "target_rule": [
+          "수취인명",
+          "연락처",
+          "주소"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "발주서 최하단(맨 끝)에 사은품만 모아서 일괄 추가",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#FFF2CC",
+        "no_color": false,
+        "highlight_scope": "gift_only"
+      },
+      "special_product": {
+        "enabled": false,
+        "keyword": "",
+        "gift_product_name": "[사은품] 특정품목 증정",
+        "gift_option_name": "단품",
+        "gift_quantity": 1,
+        "target_rule": [
+          "주문번호"
+        ],
+        "action_type": "add_row",
+        "tag_display_rule": "텍스트 표기 없음 (화면 및 엑셀 배경색 하이라이트 색인만 처리 ⭐)",
+        "gift_position": "해당 주문(합포장) 가장 아래에 사은품 행 추가 (추천 ⭐)",
+        "write_col_enabled": false,
+        "write_target_col": "N",
+        "color": "#E2EFDA",
+        "no_color": false,
+        "highlight_scope": "both"
+      },
+      "custom_events": []
+    },
+    "is_pinned": true,
+    "updated_at": "2026-10-10 05:48"
+  }
+}

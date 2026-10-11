@@ -1,0 +1,13 @@
+[server]
+headless = false
+showEmailPrompt = false
+maxUploadSize = 200
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+primaryColor = "#FF4B4B"
