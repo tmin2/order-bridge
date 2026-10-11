@@ -30,6 +30,29 @@ html, body, [class*="css"] {
     color: #37352f;
 }
 
+/* =========================================================================
+   Streamlit Cloud 브랜딩(Fork/GitHub) 및 우측 하단 배지/관리자 버튼 숨김 ⭐
+   ========================================================================= */
+#MainMenu {visibility: hidden !important; display: none !important;}
+footer {visibility: hidden !important; display: none !important;}
+[data-testid="stStatusWidget"] {visibility: hidden !important; display: none !important;}
+[data-testid="manage-app-button"] {visibility: hidden !important; display: none !important;}
+div[data-testid="manage-app-button"] {display: none !important;}
+div[class*="viewerBadge"] {display: none !important;}
+a[class*="viewerBadge"] {display: none !important;}
+div[class*="Profile"] {display: none !important;}
+div[class*="FloatingActionButton"] {display: none !important;}
+div[class*="bottom-right"] {display: none !important;}
+div[class*="BottomRight"] {display: none !important;}
+[data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
+header [data-testid="stToolbar"] {display: none !important;}
+header a[href*="github.com"] {display: none !important;}
+header button[title*="Fork"] {display: none !important;}
+
+/* 모바일 사이드바 열기 버튼(>>)은 안전하게 보존 */
+[data-testid="collapsedControl"] {display: block !important; visibility: visible !important;}
+[data-testid="stSidebarCollapseButton"] {display: block !important; visibility: visible !important;}
+
 /* Notion Page Title */
 .notion-header {
     padding: 12px 0 18px 0;
