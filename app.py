@@ -1374,13 +1374,14 @@ def read_uploaded_tabular_file(uploaded_file: Any) -> pd.DataFrame:
 
     filename: str = getattr(uploaded_file, "name", "").lower()
 
-    # 버퍼를 처음 위치로 되감는 내부 도우미 함수
-    def _reset_buffer() -> None:
-        if hasattr(uploaded_file, "seek"):
-            try:
-                uploaded_file.seek(0)
-            except Exception:
-                pass
+    # 안전하게 파일 바이트 읽기
+    try:
+        content_bytes = uploaded_file.getvalue() if hasattr(uploaded_file, "getvalue") else uploaded_file.read()
+    except Exception:
+        content_bytes = b""
+
+    if not content_bytes or len(content_bytes) == 0:
+        raise ValueError("파일 크기가 0바이트(빈 파일)이거나 기기/클라우드에서 다운로드가 완료되지 않았습니다.")
 
     errors: list[str] = []
 
@@ -1388,29 +1389,25 @@ def read_uploaded_tabular_file(uploaded_file: Any) -> pd.DataFrame:
     # 1-1. xlrd 엔진 우선 시도 (.xls 파일인 경우)
     if filename.endswith(".xls"):
         try:
-            _reset_buffer()
-            return pd.read_excel(uploaded_file, engine="xlrd")
+            return pd.read_excel(io.BytesIO(content_bytes), engine="xlrd")
         except Exception as e:
             errors.append(f"xlrd: {e}")
 
     # 1-2. openpyxl 엔진 우선 시도 (.xlsx 파일인 경우)
     try:
-        _reset_buffer()
-        return pd.read_excel(uploaded_file, engine="openpyxl")
+        return pd.read_excel(io.BytesIO(content_bytes), engine="openpyxl")
     except Exception as e:
         errors.append(f"openpyxl: {e}")
 
     # 1-3. xlrd 재시도 (.xls 확장자가 아니더라도 구형 바이너리 xls일 가능성 대비)
     try:
-        _reset_buffer()
-        return pd.read_excel(uploaded_file, engine="xlrd")
+        return pd.read_excel(io.BytesIO(content_bytes), engine="xlrd")
     except Exception as e:
         errors.append(f"xlrd_fallback: {e}")
 
     # 1-4. pandas 기본 엔진 시도
     try:
-        _reset_buffer()
-        return pd.read_excel(uploaded_file)
+        return pd.read_excel(io.BytesIO(content_bytes))
     except Exception as e:
         errors.append(f"read_excel_default: {e}")
 
@@ -1418,8 +1415,7 @@ def read_uploaded_tabular_file(uploaded_file: Any) -> pd.DataFrame:
     encodings = ["utf-8-sig", "cp949", "euc-kr", "utf-8", "latin1"]
     for enc in encodings:
         try:
-            _reset_buffer()
-            df_csv = pd.read_csv(uploaded_file, encoding=enc, sep=None, engine="python")
+            df_csv = pd.read_csv(io.BytesIO(content_bytes), encoding=enc, sep=None, engine="python")
             if df_csv is not None and not df_csv.empty and len(df_csv.columns) >= 1:
                 return df_csv
         except Exception as e:
@@ -1427,8 +1423,7 @@ def read_uploaded_tabular_file(uploaded_file: Any) -> pd.DataFrame:
 
     # 3. HTML 테이블 시도 (일부 쇼핑몰에서 HTML 테이블 형식을 .xls로 내보내는 경우)
     try:
-        _reset_buffer()
-        dfs = pd.read_html(uploaded_file)
+        dfs = pd.read_html(io.BytesIO(content_bytes))
         if dfs and len(dfs) > 0:
             return dfs[0]
     except Exception as e:
@@ -3093,7 +3088,7 @@ with st.sidebar:
             use_container_width=True
         )
         st.write("")
-        uploaded_backup = st.file_uploader("📤 백업 파일 복원 (.json)", type=["json"], key="uploader_full_backup")
+        uploaded_backup = st.file_uploader("📤 백업 파일 복원 (.json)", type=["json", "JSON"], key="uploader_full_backup")
         if uploaded_backup is not None:
             if st.button("🔄 백업 파일 적용 및 덮어쓰기", type="primary", use_container_width=True):
                 content = uploaded_backup.read().decode("utf-8")
@@ -3543,7 +3538,7 @@ if cur_step_idx == 0:
     
     brand_excel_file = st.file_uploader(
         "브랜드사 엑셀 파일 업로드 (.xlsx, .xls, .csv)",
-        type=["xlsx", "xls", "csv"],
+        type=["xlsx", "xls", "csv", "XLSX", "XLS", "CSV"],
         key=f"brand_sample_uploader_{selected_brand_key}"
     )
 
@@ -3751,7 +3746,7 @@ if cur_step_idx == 0:
                     use_container_width=True
                 )
         
-        uploaded_b_json = st.file_uploader("📤 브랜드 템플릿 JSON 파일 가져오기 (추가/병합)", type=["json"], key="uploader_brand_tmpl_json")
+        uploaded_b_json = st.file_uploader("📤 브랜드 템플릿 JSON 파일 가져오기 (추가/병합)", type=["json", "JSON"], key="uploader_brand_tmpl_json")
         if uploaded_b_json is not None:
             if st.button("🔄 브랜드 템플릿 병합 및 저장", type="primary", key="btn_save_merge_b_json"):
                 try:
@@ -3858,7 +3853,7 @@ elif cur_step_idx == 1:
                 use_container_width=True
             )
         with s_down_col2:
-            uploaded_s_json = st.file_uploader("📤 셀러 매핑 JSON 파일 복원/병합", type=["json"], key="uploader_seller_tmpl_json")
+            uploaded_s_json = st.file_uploader("📤 셀러 매핑 JSON 파일 복원/병합", type=["json", "JSON"], key="uploader_seller_tmpl_json")
             if uploaded_s_json is not None:
                 st.markdown('<div class="save-template-btn">', unsafe_allow_html=True)
                 if st.button("🔄 셀러 매핑 병합 및 저장", type="primary", key="btn_merge_s_json"):
@@ -3875,13 +3870,37 @@ elif cur_step_idx == 1:
 
     st.markdown("---")
 
-    uploaded_files = st.file_uploader(
-        "작업할 셀러 발주서 엑셀 파일을 업로드하세요 (복수 파일 동시 드래그 or 개별 추가 가능 ⭐)",
-        type=["xlsx", "xls", "csv"],
-        accept_multiple_files=True,
-        key="seller_uploader",
-        help="여러 개의 발주서 파일을 한 번에 드래그하거나, 하나씩 추가하여 자동으로 하나의 통합 발주서로 병합할 수 있습니다."
-    )
+    s_col_mode, s_col_tip = st.columns([2.8, 3.2], vertical_alignment="center")
+    with s_col_mode:
+        upload_mode = st.radio(
+            "📂 파일 업로드 방식 선택",
+            ["📁 일반 업로드 (모바일 / 스마트폰 추천 ⭐)", "📑 다중 파일 일괄 병합 (PC 환경 추천 💻)"],
+            horizontal=True,
+            index=0,
+            key="seller_upload_mode",
+            help="스마트폰이나 태블릿 등 모바일 브라우저(Safari, Chrome)에서는 '일반 업로드' 모드가 가장 안정적입니다."
+        )
+    with s_col_tip:
+        st.caption("💡 **모바일 안내**: 스마트폰(아이폰/갤럭시)에서는 카카오톡/메일의 첨부파일을 기기에 다운로드 후 '일반 업로드'로 선택하시면 오류 없이 즉시 업로드됩니다.")
+
+    if upload_mode == "📁 일반 업로드 (모바일 / 스마트폰 추천 ⭐)":
+        single_file = st.file_uploader(
+            "작업할 셀러 발주서 엑셀 파일을 업로드하세요 (.xlsx, .xls, .csv)",
+            type=["xlsx", "xls", "csv", "XLSX", "XLS", "CSV"],
+            accept_multiple_files=False,
+            key="seller_uploader_single",
+            help="스마트폰 및 단일 파일 작업에 최적화된 업로더입니다."
+        )
+        uploaded_files = [single_file] if single_file is not None else []
+    else:
+        multi_files = st.file_uploader(
+            "작업할 셀러 발주서 엑셀 파일들을 업로드하세요 (복수 파일 동시 드래그 or 개별 추가 가능 ⭐)",
+            type=["xlsx", "xls", "csv", "XLSX", "XLS", "CSV"],
+            accept_multiple_files=True,
+            key="seller_uploader_multi",
+            help="여러 개의 발주서 파일을 한 번에 드래그하거나, 하나씩 추가하여 자동으로 하나의 통합 발주서로 병합할 수 있습니다."
+        )
+        uploaded_files = multi_files if multi_files is not None else []
 
     if uploaded_files:
         try:
@@ -3889,13 +3908,20 @@ elif cur_step_idx == 1:
             file_summaries = []
             file_names_list = []
             for uf in uploaded_files:
+                if uf is None:
+                    continue
                 f_name = os.path.splitext(uf.name)[0]
+                if hasattr(uf, "size") and uf.size == 0:
+                    st.warning(f"⚠️ `{uf.name}` 파일 크기가 0바이트입니다. 기기에 완전히 다운로드된 상태인지 확인해주세요.")
+                    continue
                 raw_excel_df = read_uploaded_tabular_file(uf)
                 part_df = sanitize_dataframe_columns(raw_excel_df)
                 if not part_df.empty:
                     dfs.append(part_df)
                     file_summaries.append(f"`{uf.name}` ({len(part_df):,}건)")
                     file_names_list.append(f_name)
+                else:
+                    st.warning(f"⚠️ `{uf.name}` 파일에서 데이터를 읽지 못했습니다. 빈 시트이거나 서식이 일치하지 않는지 확인해주세요.")
 
             if dfs:
                 df_seller = pd.concat(dfs, ignore_index=True)
@@ -3909,6 +3935,8 @@ elif cur_step_idx == 1:
                 st.session_state.current_seller_df = df_seller
                 st.session_state.current_seller_file_summaries = file_summaries
                 st.session_state.current_seller_file_count = len(dfs)
+            elif uploaded_files:
+                st.error("⚠️ 선택된 파일에서 데이터를 불러오지 못했습니다. 엑셀 파일이 정상적인지 확인해주세요.")
         except Exception as e:
             st.error(f"파일을 읽는 중 오류가 발생했습니다: {e}")
             df_seller = None
@@ -4368,7 +4396,7 @@ elif cur_step_idx == 2:
                 with tab_excel:
                     price_excel_file = st.file_uploader(
                         "본사 단가표/가격표 엑셀 파일 업로드 (.xlsx, .xls, .csv)",
-                        type=["xlsx", "xls", "csv"],
+                        type=["xlsx", "xls", "csv", "XLSX", "XLS", "CSV"],
                         key="price_file_uploader_v2"
                     )
 
@@ -6341,7 +6369,7 @@ elif cur_step_idx == 3:
                 use_container_width=True
             )
         with ev_up_col:
-            up_ev_json = st.file_uploader("📤 이벤트 설정 JSON 불러오기", type=["json"], key="uploader_event_preset")
+            up_ev_json = st.file_uploader("📤 이벤트 설정 JSON 불러오기", type=["json", "JSON"], key="uploader_event_preset")
             if up_ev_json is not None:
                 if st.button("🔄 이벤트 프리셋 적용", type="secondary", key="btn_apply_ev_preset"):
                     try:
